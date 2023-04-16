@@ -13,6 +13,11 @@ setting_up_container
 network_check
 update_os
 
+msg_info "HTTP_PROXY $HTTP_PROXY"
+msg_info "HTTPS_PROXY $HTTPS_PROXY"
+echo $HTTP_PROXY
+echo $HTTPS_PROXY
+
 msg_info "Installing Dependencies"
 $STD apt-get update
 $STD apt-get -y install \
