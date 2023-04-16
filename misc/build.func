@@ -469,6 +469,8 @@ EOF
     sleep 2
     pct exec "$CTID" -- ash -c "apk add bash >/dev/null"
   fi
+  pct exec "$CTID" -- export HTTP_PROXY=http://192.168.1.8:3128
+  pct exec "$CTID" -- export HTTPS_PROXY=http://192.168.1.8:3128
   lxc-attach -n "$CTID" -- bash -c "$(wget -qLO - https://raw.githubusercontent.com/tteck/Proxmox/main/install/$var_install.sh)" || exit
 
 }
